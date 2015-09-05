@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
+using Microsoft.AspNet.Authorization;
 
 namespace Phelp_Server.Controllers
 {
@@ -30,6 +31,12 @@ namespace Phelp_Server.Controllers
         public IActionResult Error()
         {
             return View("~/Views/Shared/Error.cshtml");
+        }
+        [Route("Country")]
+        [Authorize]
+        public IActionResult Country()
+        {
+            return View("Country");
         }
     }
 }
